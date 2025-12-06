@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blockchain Meets AI – Dr. Olga Chatelain</title>
+  <meta
+    name="description"
+    content="Dr. Olga Chatelain – AI & blockchain strategy, executive coaching, keynotes and training at the intersection of emerging tech and human-centered leadership."
+  />
+  <!-- Embedded styles so the preview works as a single file -->
+  <style>
+    :root {
+      /* Accessible crème theme */
+      --bg: #FAF7F2;               /* background */
+      --bg-alt: #F1EBE2;           /* section alt */
+      --card-bg: #FFFFFF;          /* cards */
+
+      /* Text system with WCAG contrast */
+      --text: #1A1A1A;             /* primary text */
+      --text-muted: #4A4A4A;       /* improved contrast */
+
+      /* Accents adjusted for AA contrast */
+      --accent: #0A0A0A;           /* strong black for icons & bullets */
+      --accent-soft: rgba(0,0,0,0.08);
+
+      /* Borders & shadows (soft but defined) */
+      --border-subtle: rgba(0,0,0,0.18); /* improved visibility */
+      --shadow-soft: 0 12px 28px rgba(0,0,0,0.12);
+
+      /* Radii & layout */
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-pill: 999px;
+      --transition-fast: 160ms ease-out;
+      --max-width: 1120px;
+      --brand-blue: #134074;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg); /* soft crème background */
+      color: var(--text);
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    /* Layout */
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 4.5rem 0;
+    }
+
+    .section-alt {
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), var(--bg-alt) 55%);
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 3vw, 2.4rem);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-intro {
+      max-width: 44rem;
+      color: var(--text-muted);
+      margin: 0.4rem 0 2rem;
+    }
+
+    /* Header & nav */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(
+        to bottom,
+        rgba(250, 247, 242, 0.96),
+        rgba(250, 247, 242, 0.9),
+        rgba(250, 247, 242, 0.0)
+      );
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 4rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-mark {
+      width: 2.3rem;
+      height: 2.3rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: #FFFFFF;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .logo-text {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .main-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.35rem 0.25rem;
+      border-radius: var(--radius-pill);
+      transition: color var(--transition-fast), background var(--transition-fast),
+        transform var(--transition-fast);
+    }
+
+    .main-nav a:hover {
+      color: var(--text);
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    /* Buttons */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      background: #FFFFFF;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast), color var(--transition-fast);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+      background: #F1EBE2;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(0, 0, 0, 0.18);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-small {
+      padding: 0.45rem 0.95rem;
+      font-size: 0.83rem;
+    }
+
+    .btn-fullwidth {
+      width: 100%;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 0 0 3.5rem;
+    }
+
+    .hero-banner-wrapper {
+      position: relative;
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-banner-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(250, 247, 242, 0.0),
+        rgba(250, 247, 242, 0.92)
+      );
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.18rem 0.9rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      background: #FFFFFF;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      margin: 0 0 0.7rem;
+    }
+
+    .hero-subtitle {
+      max-width: 32rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: var(--accent-soft);
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), #FFFFFF);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-image {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    .hero-photo-placeholder {
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(148, 163, 184, 0.8);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.9)
+      );
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-card-body h2 {
+      font-size: 1.25rem;
+      margin: 0 0 0.3rem;
+    }
+
+    .hero-card-body p {
+      margin: 0 0 0.7rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+    }
+
+    .hero-highlights li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 0.35rem;
+    }
+
+    /* Lists */
+
+    .checklist,
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1.4rem;
+    }
+
+    .checklist li,
+    .bullet-list li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0.05rem;
+      font-size: 0.8rem;
+      color: #86efac;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    /* Cards & grids */
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.6rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(145deg, #FFFFFF, #F1EBE2);
+      padding: 1.3rem 1.3rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0.3rem 0 0.9rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Two-column sections */
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 2.4rem;
+    }
+
+    /* Speaking */
+
+    .speaking-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    .case-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .case-outcome {
+      font-size: 0.9rem;
+    }
+
+        /* Resources */
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    .resources-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .article-card {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(135deg, #FFFFFF, #F5EFE6);
+      box-shadow: var(--shadow-soft);
+      color: var(--text);
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .article-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+      border-color: rgba(0, 0, 0, 0.24);
+    }
+
+    .article-thumb {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+
+    .article-title {
+      font-size: 0.98rem;
+      margin: 0 0 0.25rem;
+      color: var(--brand-blue);
+    }
+
+    .article-excerpt {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .article-meta {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.12rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(19, 64, 116, 0.25);
+      background: rgba(19, 64, 116, 0.06);
+      margin: 0 0 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brand-blue);
+    }
+
+    .link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+
+    .link-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .link-list a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      padding-bottom: 0.05rem;
+    }
+
+    .link-list a:hover {
+      border-bottom-color: #000000;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.15fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0.8rem;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    .contact-list a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-list a:hover {
+      border-bottom-color: #000000;
+    }
+
+    .small-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .contact-form {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      padding: 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    input,
+    textarea {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      padding: 0.6rem 0.75rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #000000;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+      background: #FFFFFF;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.5rem 0 1.8rem;
+      background: #FFFFFF;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-grid,
+      .speaking-grid,
+      .resources-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3.8rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .site-header {
+        background: rgba(250, 247, 242, 0.96);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.4rem;
+      }
+
+      .main-nav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.55rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section {
+        padding: 3.2rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-mark">BM</span>
+        <span class="logo-text">Blockchain Meets AI</span>
+      </div>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#resources">Articles</a>
+        <a href="#contact" class="btn btn-small">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+    <section class="hero" id="top">
+    <div class="hero-banner-wrapper">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABdwAAAH0CAIAAACo53h7AAAACXBIWXMAAAsTAAA..." alt="Blockchain Meets AI banner" class="hero-banner">
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">BLOCKCHAIN MEETS AI</p>
+        <h1>Where frontier technology meets human-centered leadership.</h1>
+        <p class="hero-subtitle">
+          I’m <strong>Dr. Olga Chatelain</strong> – an innovation strategist, AI & blockchain expert,
+          and systemic business coach. I help leaders and teams turn emerging technologies into
+          clear strategies, practical use cases, and real business outcomes.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Book a strategy call</a>
+          <a href="#services" class="btn btn-outline">Explore trainings & coaching</a>
+        </div>
+        <div class="hero-meta">
+          <span>AI & GenAI strategy</span>
+          <span>Blockchain use cases</span>
+          <span>Executive coaching</span>
+          <span>Global transformation</span>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+                <div class="hero-card-body">
+          <h2>Dr. Olga Chatelain</h2>
+          <p>AI & Blockchain Strategist · Systemic Business Coach · Transformation Leader</p>
+          <ul class="hero-highlights">
+            <li>Program Manager, Financial Digital Workplace, Siemens AG</li>
+            <li>15+ years in global digitalization & innovation programs</li>
+            <li>Certified Systemic Business Coach & Senior Project Manager</li>
+            <li>Fluent in English, German, Russian, French & Ukrainian</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container section-grid">
+      <div>
+        <h2>About</h2>
+        <p>
+          I work at the intersection of <strong>AI, blockchain, and leadership</strong>.
+          My career spans global transformation programs, executive development, and
+          technology-driven innovation in complex organizations.
+        </p>
+        <p>
+          At Siemens AG I lead end-to-end digital transformation projects in tax and finance,
+          designing and implementing <strong>AI- and GPT-based solutions</strong> as well as
+          <strong>blockchain use cases</strong> together with partners such as Henkel, Microsoft
+          and the Institute for Tax Digitalization (IdST).
+        </p>
+        <p>
+          As a Systemic Business Coach and long-time leadership development professional,
+          I bring together technology, people, and strategy – making complex topics accessible,
+          actionable, and aligned with real business goals.
+        </p>
+      </div>
+
+      <div>
+        <h3>Focus areas</h3>
+        <ul class="checklist">
+          <li>AI & GenAI foundations and strategy</li>
+          <li>Blockchain concepts & enterprise use cases</li>
+          <li>Digital transformation & innovation programs</li>
+          <li>Executive & leadership coaching</li>
+          <li>Cross-functional and cross-cultural collaboration</li>
+        </ul>
+
+        <h3>Selected credentials</h3>
+        <ul class="bullet-list">
+          <li>Systemic Business Coach, Munich Academy for Business Coaching</li>
+          <li>Master of Professional Consulting, Siemens Learning Campus</li>
+          <li>Certificate in Blockchain Technology, UC Berkeley</li>
+          <li>PMP® – Project Management Professional, PMI</li>
+          <li>Ph.D. in Power Engineering</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <p class="section-intro">
+        I design and deliver tailored interventions – from C-level briefings to hands-on labs –
+        that help organizations move from buzzwords to concrete AI and blockchain outcomes.
+      </p>
+
+      <div class="cards-grid">
+        <article class="card">
+          <h3>TaxChain – Blockchain for Tax Transparency</h3>
+          <img src="award-badge.svg" alt="TaxExcellence Award Badge" style="width:64px; height:auto; margin:0.4rem 0 0.8rem; display:block;">
+          <p class="case-meta">Blockchain · Customs · Award-winning project</p>
+          <p>
+            Co-led the realization of <strong>TaxChain</strong>, an enterprise blockchain solution for
+            cross‑organizational tax and customs processes. The project was implemented together with
+            industry partners and recognized for its innovation in decentralized trust architectures.
+          </p>
+          <p class="case-outcome">
+            <strong>Award:</strong> Winner of the <em>TaxExcellence Award</em> for outstanding digital transformation<br/>
+            <a href="https://www.lfdecentralizedtrust.org/case-studies/taxchain-case-study" target="_blank" rel="noopener">Read the full case study →</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>Executive AI & Blockchain Briefings</h3>
+          <p>
+            Focused, high-signal sessions for boards and leadership teams on what AI,
+            GenAI and blockchain really mean for your business, risk landscape and strategy.
+          </p>
+          <ul class="bullet-list">
+            <li>90–120 minute briefings, tailored to your industry</li>
+            <li>Real-world examples from tax, finance, logistics & beyond</li>
+            <li>Clear implications, risks and next strategic steps</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>AI & GenAI Training for Teams</h3>
+          <p>
+            Practical training that equips your teams with a shared understanding of AI,
+            safe usage patterns and concrete workflows for daily work.
+          </p>
+          <ul class="bullet-list">
+            <li>AI & GenAI foundations for non-technical audiences</li>
+            <li>Prompting & workflow design for knowledge workers</li>
+            <li>Use-case discovery and co-creation workshops</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Executive & Leadership Coaching</h3>
+          <p>
+            1:1 and team coaching for leaders navigating AI-driven change, role transitions
+            and complex stakeholder landscapes.
+          </p>
+          <ul class="bullet-list">
+            <li>Leadership in times of AI & automation</li>
+            <li>Strategic clarity, decision-making & communication</li>
+            <li>Change leadership and personal resilience</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Blockchain Strategy & Education</h3>
+          <p>
+            Demystifying blockchain for enterprises: what it is, where it fits and how it
+            can interact with AI to create new business models.
+          </p>
+          <ul class="bullet-list">
+            <li>Blockchain fundamentals and trust architectures</li>
+            <li>Customs, tax & compliance use cases</li>
+            <li>Blockchain × AI scenarios and experiments</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="speaking">
+    <div class="container">
+      <h2>Speaking & Teaching</h2>
+      <p class="section-intro">
+        I regularly speak at conferences, universities and corporate events about AI,
+        blockchain and the human side of digital transformation.
+      </p>
+
+      <div class="speaking-grid">
+        <div>
+          <h3>Sample keynote topics</h3>
+          <ul class="bullet-list">
+            <li>“Blockchain Meets AI – The Next Innovation Frontier”</li>
+            <li>“From Hype to Practice: What Leaders Must Know About AI & GenAI”</li>
+            <li>“AI, Creativity & the Future of Work”</li>
+            <li>“Responsible AI: Governance, Risk & Culture”</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Teaching & programs</h3>
+          <ul class="bullet-list">
+            <li>Corporate AI academies & internal learning journeys</li>
+            <li>Workshops for innovation hubs & accelerators</li>
+            <li>Guest lectures for universities and business schools</li>
+            <li>Specialized sessions for music, media & creative industries</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="cases">
+    <div class="container">
+      <h2>Selected Case Studies</h2>
+      <p class="section-intro">
+        A few examples of how I connect AI, blockchain and leadership to drive
+        tangible outcomes. Details can be shared in anonymized form on request.
+      </p>
+
+      <div class="cards-grid">
+        <article class="card">
+          <h3>AI for Tax & Customs at a Global Enterprise</h3>
+          <p class="case-meta">AI & GPT-based solutions · Tech Tax Lab</p>
+          <p>
+            Leading digital transformation projects in the Financial Digital Workplace at Siemens,
+            I design and implement AI-enabled solutions that optimize tax-relevant and customs
+            processes across countries and business units.
+          </p>
+          <p class="case-outcome">
+            <strong>Outcome:</strong> automated workflows, faster processing and better transparency
+            for finance and compliance stakeholders.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Blockchain Ecosystem for Customs</h3>
+          <p class="case-meta">Co-innovation with Henkel & Microsoft</p>
+          <p>
+            Co-designed an innovative blockchain ecosystem for customs in collaboration with
+            strategic partners, exploring new ways of building trust, transparency and efficiency
+            across organizational boundaries.
+          </p>
+          <p class="case-outcome">
+            <strong>Outcome:</strong> blueprint for decentralized collaboration models in trade
+            and compliance.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Global Leadership & Top Talent Programs</h3>
+          <p class="case-meta">Leadership & Talent Development · Siemens AG</p>
+          <p>
+            As Head of Top Talent for Growth (TT4G), sponsored by the CEO, I designed and executed
+            high-potential architectures and development programs for leaders in emerging markets,
+            in cooperation with ESMT Berlin.
+          </p>
+          <p class="case-outcome">
+            <strong>Outcome:</strong> strengthened leadership pipeline and successful placements
+            into key roles globally.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+    <section class="section" id="resources">
+    <div class="container">
+      <h2>Articles & Resources</h2>
+      <p class="section-intro">
+        I write about AI, blockchain, innovation and leadership – not on a fixed schedule, but
+        when there is something meaningful to explore. My Substack publication <strong>“Blockchain Meets AI”</strong>
+        gathers these long-form reflections in one place.
+      </p>
+
+      <div class="resources-grid">
+                <div>
+          <h3>On Substack · Blockchain Meets AI</h3>
+          <p class="resources-text">
+            On Substack I occasionally publish deeper essays that connect directly to the topics I work on with
+            clients: AI strategy, blockchain use cases, tax & customs, and the human side of transformation.
+            Here are a few highlighted pieces:
+          </p>
+
+          <div class="article-list">
+            <a class="article-card" href="https://olgachatelain.substack.com/p/the-ai-paradox-its-not-the-tech-its-us" target="_blank" rel="noopener">
+              <img src="ai-paradox-thumb.jpg" alt="Human and AI facing each other" class="article-thumb" />
+              <div>
+                
+                <h4 class="article-title"">The AI Paradox: It’s Not the Tech – It’s Us</h4>
+                <p class="article-excerpt">
+                  Why AI projects succeed or fail mostly because of culture, incentives and leadership – not algorithms.
+                  I draw on real corporate examples and coaching work with leaders.
+                </p>
+                <p class="article-meta">AI strategy · Leadership & culture</p>
+              </div>
+            </a>
+
+            <a class="article-card" href="https://olgachatelain.substack.com/p/llms-cant-understand-time" target="_blank" rel="noopener">
+              <img src="llm-time-thumb.jpg" alt="Clock and abstract neural network" class="article-thumb" />
+              <div>
+                
+                <h4 class="article-title"">LLMs Can’t Understand Time — At Least Not Naturally</h4>
+                <p class="article-excerpt">
+                  Lessons from tax and compliance work where exact dates and timelines matter – and how to design
+                  GenAI workflows that remain reliable in such contexts.
+                </p>
+                <p class="article-meta">GenAI · Risk & governance</p>
+              </div>
+            </a>
+
+            <a class="article-card" href="https://olgachatelain.substack.com/p/from-minority-report-to-the-orb" target="_blank" rel="noopener">
+              <img src="blockchain-orb-thumb.jpg" alt="Futuristic sci-fi style blockchain visual" class="article-thumb" />
+              <div>
+                
+                <h4 class="article-title"">From Minority Report to the Orb: When Blockchain Feels Like Sci‑Fi</h4>
+                <p class="article-excerpt">
+                  Reflections on blockchain, identity and proof-of-human solutions – and what they mean for
+                  regulation, trust and real-world implementations.
+                </p>
+                <p class="article-meta">Blockchain · Identity & regulation</p>
+              </div>
+            </a>
+
+            <a class="article-card" href="https://olgachatelain.substack.com" target="_blank" rel="noopener">
+              <img src="substack-generic-thumb.jpg" alt="Abstract AI and blockchain collage" class="article-thumb" />
+              <div>
+                
+                <h4 class="article-title"">More essays on Blockchain Meets AI</h4>
+                <p class="article-excerpt">
+                  Explore all articles – from NFT experiments and creative AI to field reports from conferences
+                  and practical case stories from corporate transformation.
+                </p>
+                <p class="article-meta">All posts · Blockchain Meets AI</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3>Slides & Handouts (on request)</h3>
+          <p class="resources-text">
+            For selected clients and events I share slide decks and handouts, such as:
+          </p>
+          <ul class="bullet-list">
+            <li>AI & GenAI foundations for leaders and teams</li>
+            <li>Blockchain Meets AI – use cases and patterns</li>
+            <li>AI for musicians and creative industries</li>
+            <li>Responsible AI and governance checklists</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <h2>Contact</h2>
+        <p class="section-intro">
+          Curious how AI and blockchain could support your strategy, people or projects?
+          Send me a short message with your context, and we’ll explore the right format together.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <strong>Email:</strong>
+            <a href="mailto:consulting@olgachatelain.com">consulting@olgachatelain.com</a>
+          </li>
+          <li>
+            <strong>LinkedIn:</strong>
+            <a
+              href="https://www.linkedin.com/in/chatelain-olga-8b1571/"
+              target="_blank"
+              rel="noopener"
+            >
+              linkedin.com/in/chatelain-olga-8b1571
+            </a>
+          </li>
+          <li>
+            <strong>Location:</strong> Munich, Germany · working internationally onsite & online
+          </li>
+        </ul>
+        <p class="small-note">
+          If you prefer, I’m happy to start with a short exploratory call.
+        </p>
+      </div>
+
+      <div>
+        <form class="contact-form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Tell me briefly about your organization and what you’re looking for."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-fullwidth" disabled>
+            Send message (static demo)
+          </button>
+          <p class="form-note">
+            This is a static site. To make the form functional later, you can connect it to a
+            service like Formspree, Getform or Netlify Forms without changing the design.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Dr. Olga Chatelain · Blockchain Meets AI · All rights reserved.</p>
+      <p class="footer-links">
+        <a href="https://olgachatelain.substack.com" target="_blank" rel="noopener">
+          Articles on Substack
+        </a>
+        <span>·</span>
+        <a href="#top">Back to top</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
