@@ -47,22 +47,10 @@
             border-radius: 8px;
             transition: all 0.2s ease;
             font-weight: 600;
-            position: relative;
-            overflow: hidden;
         }
         .link-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        .link-item .vote-count {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            background: rgba(255, 255, 255, 0.3);
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 700;
         }
         .gemini {
             background: linear-gradient(135deg, #44403C 0%, #57534e 100%);
@@ -79,21 +67,6 @@
         .kimi {
             background: linear-gradient(135deg, #5B7FFF 0%, #7B9CFF 100%);
         }
-        .stats {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid #e0e0e0;
-        }
-        .stats h3 {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        .total-votes {
-            font-size: 32px;
-            font-weight: 700;
-            color: #333;
-        }
         @media (max-width: 640px) {
             .container {
                 padding: 1.5rem;
@@ -108,15 +81,9 @@
         <div class="links" id="links-container">
             <!-- Links will be populated by JavaScript -->
         </div>
-        <div class="stats">
-            <h3>Total Votes Cast</h3>
-            <div class="total-votes" id="total-votes">0</div>
-        </div>
     </div>
 
     <script>
-        const STORAGE_KEY = 'website_votes';
-        
         const implementations = [
             { id: 'gemini', name: 'Gemini Implementation', url: 'gemini/gemini-index.html', class: 'gemini' },
             { id: 'claude', name: 'Claude Implementation', url: 'claude/olga-chatelain-portfolio.html', class: 'claude' },
@@ -125,48 +92,22 @@
             { id: 'kimi', name: 'Kimi K2 Implementation', url: 'kimi-k2/index.html', class: 'kimi' }
         ];
 
-        function getLocalVotes() {
-            const votes = localStorage.getItem(STORAGE_KEY);
-            return votes ? JSON.parse(votes) : {
-                'gemini': 0,
-                'claude': 0,
-                'minimax': 0,
-                'chatgpt': 0,
-                'kimi': 0
-            };
-        }
-
         function renderLinks() {
-            const votes = getLocalVotes();
             const linksContainer = document.getElementById('links-container');
-            let totalVotes = 0;
 
             linksContainer.innerHTML = '';
 
             implementations.forEach(impl => {
-                const voteCount = votes[impl.id] || 0;
-                totalVotes += voteCount;
-
                 const link = document.createElement('a');
                 link.href = impl.url;
                 link.className = `link-item ${impl.class}`;
-                link.innerHTML = `
-                    ${impl.name}
-                    <span class="vote-count">
-                        ${voteCount} vote${voteCount !== 1 ? 's' : ''} (browser)
-                    </span>
-                `;
+                link.textContent = impl.name;
                 linksContainer.appendChild(link);
             });
-
-            document.getElementById('total-votes').textContent = totalVotes;
         }
 
         // Initial render
         renderLinks();
-
-        // Update every 2 seconds to reflect any new votes
-        setInterval(renderLinks, 2000);
     </script>
 </body>
 </html>
