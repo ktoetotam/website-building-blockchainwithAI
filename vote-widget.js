@@ -259,10 +259,20 @@
 
         document.getElementById('back-btn').addEventListener('click', function() {
             // Navigate to root index.html
-            const pathParts = window.location.pathname.split('/');
-            const depth = pathParts.filter(p => p && p !== 'index.html').length;
-            const backPath = '../'.repeat(depth) + 'index.html';
-            window.location.href = backPath;
+            // Get the base path (for GitHub Pages: /repo-name/ or for root domain: /)
+            const pathname = window.location.pathname;
+            const pathParts = pathname.split('/').filter(p => p);
+            
+            // Find the base URL by going back to the repo root
+            // If URL is like: /website-building-blockchainwithAI/claude/index.html
+            // We want: /website-building-blockchainwithAI/index.html
+            let basePath = '/';
+            if (pathParts.length > 0 && !pathParts[0].includes('.html')) {
+                // First part is likely the repo name on GitHub Pages
+                basePath = '/' + pathParts[0] + '/';
+            }
+            
+            window.location.href = basePath + 'index.html';
         });
     }
 
