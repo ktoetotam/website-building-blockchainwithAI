@@ -1,10 +1,9 @@
-// Vote Widget for Website Comparison - GitHub-based storage
+// Vote Widget for Website Comparison - Formspree-based storage
 (function() {
     // Configuration
     const STORAGE_KEY = 'website_votes';
     const USER_VOTES_KEY = 'user_voted_implementations';
-    const GITHUB_REPO = 'ktoetotam/website-building-blockchainwithAI';
-    const VOTES_FILE_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/votes.json`;
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID'; // Replace with your Formspree form ID
     
     const IMPLEMENTATIONS = {
         'gemini': 'Gemini Implementation',
@@ -25,27 +24,19 @@
         return null;
     }
 
-    // Fetch votes from GitHub
-    async function fetchGitHubVotes() {
-        try {
-            const response = await fetch(VOTES_FILE_URL + '?t=' + Date.now());
-            if (response.ok) {
-                const data = await response.json();
-                return data;
-            }
-        } catch (error) {
-            console.log('Using local votes:', error);
-        }
-        return getLocalVotes();
-    }
-
-    // Get local votes (fallback)
+    // Get local votes for display
     function getLocalVotes() {
         const votes = localStorage.getItem(STORAGE_KEY);
-        return votes ? JSON.parse(votes) : {};
+        return votes ? JSON.parse(votes) : {
+            'gemini': 0,
+            'claude': 0,
+            'minimax': 0,
+            'chatgpt': 0,
+            'kimi': 0
+        };
     }
 
-    // Save vote locally (for submission later)
+    // Save vote locally for immediate display
     function saveLocalVote(implementation) {
         const votes = getLocalVotes();
         votes[implementation] = (votes[implementation] || 0) + 1;
@@ -71,25 +62,35 @@
         }
     }
 
-    // Submit vote via GitHub Issue (visible to repo owner)
-    async function submitVoteToGitHub(implementation) {
-        // Store vote locally for display
-        saveLocalVote(implementation);
+    // Submit vote to Formspree
+    async function submitVoteToFormspree(implementation) {
+        const timestamp = new Date().toISOString();
+        const formData = new FormData();
         
-        // Create a vote notification issue
-        const issueTitle = `Vote: ${IMPLEMENTATIONS[implementation]}`;
-        const issueBody = `A visitor voted for **${IMPLEMENTATIONS[implementation]}**\n\nTimestamp: ${new Date().toISOString()}\n\n_To update vote counts, manually edit votes.json in the repository._`;
+        formData.append('implementation', implementation);
+        formData.append('implementationName', IMPLEMENTATIONS[implementation]);
+        formData.append('timestamp', timestamp);
+        formData.append('_subject', `Vote: ${IMPLEMENTATIONS[implementation]}`);
         
         try {
-            // Note: This creates an issue that you'll see in your GitHub repo
-            // You can manually update votes.json based on these issues
-            console.log('Vote recorded locally for:', implementation);
-            console.log('Repository owner will see vote in analytics');
-            
-            return true;
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                console.log('Vote submitted successfully');
+                return true;
+            } else {
+                console.error('Vote submission failed');
+                return false;
+            }
         } catch (error) {
-            console.log('Vote stored locally');
-            return true;
+            console.error('Error submitting vote:', error);
+            return false;
         }
     }
 
@@ -99,7 +100,7 @@
         if (!currentImpl) return;
 
         const hasUserVoted = hasVoted(currentImpl);
-        const allVotes = await fetchGitHubVotes();
+        const allVotes = getLocalVotes();
         const currentVotes = allVotes[currentImpl] || 0;
 
         const widget = document.createElement('div');
@@ -198,12 +199,12 @@
                 ${IMPLEMENTATIONS[currentImpl]}
             </h3>
             <div class="vote-count">
-                ${currentVotes} vote${currentVotes !== 1 ? 's' : ''}
+                ${currentVotes} vote${currentVotes !== 1 ? 's' : ''} (browser)
             </div>
             <button class="vote-btn" id="vote-btn" ${hasUserVoted ? 'disabled' : ''}>
                 ${hasUserVoted ? '✓ Voted!' : '👍 Vote for this'}
             </button>
-            ${hasUserVoted ? '<div class="voted-msg">Thank you for voting!</div>' : '<div class="info-msg">Votes are tracked via GitHub</div>'}
+            ${hasUserVoted ? '<div class="voted-msg">Thank you! Email sent.</div>' : '<div class="info-msg">Your vote will be emailed</div>'}
             <button class="back-btn" id="back-btn">
                 ← See All Implementations
             </button>
@@ -214,27 +215,39 @@
         // Add event listeners
         document.getElementById('vote-btn').addEventListener('click', async function() {
             if (!hasVoted(currentImpl)) {
-                await submitVoteToGitHub(currentImpl);
-                markAsVoted(currentImpl);
-                
+                // Update button immediately
                 this.disabled = true;
-                this.textContent = '✓ Voted!';
+                this.textContent = 'Sending...';
                 
-                const newVotes = await fetchGitHubVotes();
-                const newCount = newVotes[currentImpl] || currentVotes + 1;
+                // Submit to Formspree
+                const success = await submitVoteToFormspree(currentImpl);
                 
-                document.querySelector('.vote-count').textContent = 
-                    `${newCount} vote${newCount !== 1 ? 's' : ''}`;
-                
-                const existingMsg = document.querySelector('.info-msg');
-                if (existingMsg) {
-                    existingMsg.remove();
+                if (success) {
+                    // Save locally and mark as voted
+                    const newCount = saveLocalVote(currentImpl);
+                    markAsVoted(currentImpl);
+                    
+                    this.textContent = '✓ Voted!';
+                    
+                    document.querySelector('.vote-count').textContent = 
+                        `${newCount} vote${newCount !== 1 ? 's' : ''} (browser)`;
+                    
+                    const existingMsg = document.querySelector('.info-msg');
+                    if (existingMsg) {
+                        existingMsg.remove();
+                    }
+                    
+                    const votedMsg = document.createElement('div');
+                    votedMsg.className = 'voted-msg';
+                    votedMsg.textContent = 'Thank you! Email sent.';
+                    this.parentNode.insertBefore(votedMsg, this.nextSibling);
+                } else {
+                    this.disabled = false;
+                    this.textContent = '❌ Failed - Try again';
+                    setTimeout(() => {
+                        this.textContent = '👍 Vote for this';
+                    }, 2000);
                 }
-                
-                const votedMsg = document.createElement('div');
-                votedMsg.className = 'voted-msg';
-                votedMsg.textContent = 'Thank you for voting!';
-                this.parentNode.insertBefore(votedMsg, this.nextSibling);
             }
         });
 

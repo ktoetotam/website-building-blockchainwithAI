@@ -116,8 +116,6 @@
 
     <script>
         const STORAGE_KEY = 'website_votes';
-        const GITHUB_REPO = 'ktoetotam/website-building-blockchainwithAI';
-        const VOTES_FILE_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/votes.json`;
         
         const implementations = [
             { id: 'gemini', name: 'Gemini Implementation', url: 'gemini/gemini-index.html', class: 'gemini' },
@@ -127,26 +125,19 @@
             { id: 'kimi', name: 'Kimi K2 Implementation', url: 'kimi-k2/index.html', class: 'kimi' }
         ];
 
-        async function fetchGitHubVotes() {
-            try {
-                const response = await fetch(VOTES_FILE_URL + '?t=' + Date.now());
-                if (response.ok) {
-                    const data = await response.json();
-                    return data;
-                }
-            } catch (error) {
-                console.log('Using local votes:', error);
-            }
-            return getLocalVotes();
-        }
-
         function getLocalVotes() {
             const votes = localStorage.getItem(STORAGE_KEY);
-            return votes ? JSON.parse(votes) : {};
+            return votes ? JSON.parse(votes) : {
+                'gemini': 0,
+                'claude': 0,
+                'minimax': 0,
+                'chatgpt': 0,
+                'kimi': 0
+            };
         }
 
-        async function renderLinks() {
-            const votes = await fetchGitHubVotes();
+        function renderLinks() {
+            const votes = getLocalVotes();
             const linksContainer = document.getElementById('links-container');
             let totalVotes = 0;
 
@@ -162,7 +153,7 @@
                 link.innerHTML = `
                     ${impl.name}
                     <span class="vote-count">
-                        ${voteCount} vote${voteCount !== 1 ? 's' : ''}
+                        ${voteCount} vote${voteCount !== 1 ? 's' : ''} (browser)
                     </span>
                 `;
                 linksContainer.appendChild(link);
@@ -174,8 +165,8 @@
         // Initial render
         renderLinks();
 
-        // Update every 30 seconds to reflect any new votes
-        setInterval(renderLinks, 30000);
+        // Update every 2 seconds to reflect any new votes
+        setInterval(renderLinks, 2000);
     </script>
 </body>
 </html>
