@@ -671,31 +671,43 @@ function App() {
                 title: "The AI Paradox: It's Not the Tech — It's Us",
                 date: "Oct 14",
                 description: "A reflection on why every breakthrough in artificial intelligence reveals more about human limits than machine power",
-                focus: "Human-centered AI approach"
+                focus: "Human-centered AI approach",
+                authors: " Olga Chatelain",
+                url: "https://olgachatelain.substack.com/p/the-ai-paradox-its-not-the-tech-its"
               },
               {
                 title: "Why Only 1/3 Clicked: The 3 Types of People You Meet in a Tech Session",
                 date: "Oct 8",
                 description: "What an NFT experiment revealed about personal digital boundaries",
-                focus: "Human behavior in tech transformation"
+                focus: "Human behavior in tech transformation",
+                authors: " Olga Chatelain",
+                url: "https://olgachatelain.substack.com/p/why-only-13-clicked-the-3-types-of"
               },
               {
                 title: "The AI Alibi: When Hype Becomes the Perfect Cover",
                 date: "Oct 4",
                 description: "The Northern Data Scandal as a symbol of AI implementation challenges",
-                focus: "Critical thinking & realistic AI consulting"
+                focus: "Critical thinking & realistic AI consulting",
+                authors: " Olga Chatelain",
+                url: "https://olgachatelain.substack.com/p/the-ai-alibi-when-hype-becomes-the"
               },
               {
                 title: "From Minority Report to the Orb: When Blockchain Feels Like Sci-Fi",
                 date: "Sep 16",
                 description: "Insights from New Kid@TUM Blockchain conference",
-                focus: "Conference speaking & thought leadership"
+                focus: "Conference speaking & thought leadership",
+                authors: " Olga Chatelain",
+                url: "https://olgachatelain.substack.com/p/from-minority-report-to-the-orb-when"
+
+
               },
               {
                 title: "The Day I Became an NFT Artist (Without Planning It)",
                 date: "Sep 18",
                 description: "Sometimes you don't mint the NFT — the NFT mints you",
-                focus: "Practical innovation mindset"
+                focus: "Practical innovation mindset",
+                authors: " Olga Chatelain",
+                url: "https://olgachatelain.substack.com/p/the-day-i-became-an-nft-artist-without"
               }
             ].map((publication, index) => {
               const CardContent = () => (
