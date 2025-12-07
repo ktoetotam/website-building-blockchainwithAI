@@ -116,6 +116,9 @@
 
     <script>
         const STORAGE_KEY = 'website_votes';
+        const GITHUB_REPO = 'ktoetotam/website-building-blockchainwithAI';
+        const VOTES_FILE_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/votes.json`;
+        
         const implementations = [
             { id: 'gemini', name: 'Gemini Implementation', url: 'gemini/gemini-index.html', class: 'gemini' },
             { id: 'claude', name: 'Claude Implementation', url: 'claude/olga-chatelain-portfolio.html', class: 'claude' },
@@ -124,13 +127,26 @@
             { id: 'kimi', name: 'Kimi K2 Implementation', url: 'kimi-k2/index.html', class: 'kimi' }
         ];
 
-        function getVotes() {
+        async function fetchGitHubVotes() {
+            try {
+                const response = await fetch(VOTES_FILE_URL + '?t=' + Date.now());
+                if (response.ok) {
+                    const data = await response.json();
+                    return data;
+                }
+            } catch (error) {
+                console.log('Using local votes:', error);
+            }
+            return getLocalVotes();
+        }
+
+        function getLocalVotes() {
             const votes = localStorage.getItem(STORAGE_KEY);
             return votes ? JSON.parse(votes) : {};
         }
 
-        function renderLinks() {
-            const votes = getVotes();
+        async function renderLinks() {
+            const votes = await fetchGitHubVotes();
             const linksContainer = document.getElementById('links-container');
             let totalVotes = 0;
 
@@ -158,8 +174,8 @@
         // Initial render
         renderLinks();
 
-        // Update every 2 seconds to reflect any new votes
-        setInterval(renderLinks, 2000);
+        // Update every 30 seconds to reflect any new votes
+        setInterval(renderLinks, 30000);
     </script>
 </body>
 </html>

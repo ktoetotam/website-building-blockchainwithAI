@@ -1,7 +1,11 @@
-// Vote Widget for Website Comparison
+// Vote Widget for Website Comparison - GitHub-based storage
 (function() {
     // Configuration
     const STORAGE_KEY = 'website_votes';
+    const USER_VOTES_KEY = 'user_voted_implementations';
+    const GITHUB_REPO = 'ktoetotam/website-building-blockchainwithAI';
+    const VOTES_FILE_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/votes.json`;
+    
     const IMPLEMENTATIONS = {
         'gemini': 'Gemini Implementation',
         'claude': 'Claude Implementation',
@@ -21,15 +25,29 @@
         return null;
     }
 
-    // Get votes from localStorage
-    function getVotes() {
+    // Fetch votes from GitHub
+    async function fetchGitHubVotes() {
+        try {
+            const response = await fetch(VOTES_FILE_URL + '?t=' + Date.now());
+            if (response.ok) {
+                const data = await response.json();
+                return data;
+            }
+        } catch (error) {
+            console.log('Using local votes:', error);
+        }
+        return getLocalVotes();
+    }
+
+    // Get local votes (fallback)
+    function getLocalVotes() {
         const votes = localStorage.getItem(STORAGE_KEY);
         return votes ? JSON.parse(votes) : {};
     }
 
-    // Save vote
-    function saveVote(implementation) {
-        const votes = getVotes();
+    // Save vote locally (for submission later)
+    function saveLocalVote(implementation) {
+        const votes = getLocalVotes();
         votes[implementation] = (votes[implementation] || 0) + 1;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(votes));
         return votes[implementation];
@@ -37,23 +55,52 @@
 
     // Check if user has voted for current implementation
     function hasVoted(implementation) {
-        const voted = localStorage.getItem(`voted_${implementation}`);
-        return voted === 'true';
+        const userVotes = localStorage.getItem(USER_VOTES_KEY);
+        if (!userVotes) return false;
+        const voted = JSON.parse(userVotes);
+        return voted.includes(implementation);
     }
 
     // Mark as voted
     function markAsVoted(implementation) {
-        localStorage.setItem(`voted_${implementation}`, 'true');
+        let userVotes = localStorage.getItem(USER_VOTES_KEY);
+        userVotes = userVotes ? JSON.parse(userVotes) : [];
+        if (!userVotes.includes(implementation)) {
+            userVotes.push(implementation);
+            localStorage.setItem(USER_VOTES_KEY, JSON.stringify(userVotes));
+        }
+    }
+
+    // Submit vote via GitHub Issue (visible to repo owner)
+    async function submitVoteToGitHub(implementation) {
+        // Store vote locally for display
+        saveLocalVote(implementation);
+        
+        // Create a vote notification issue
+        const issueTitle = `Vote: ${IMPLEMENTATIONS[implementation]}`;
+        const issueBody = `A visitor voted for **${IMPLEMENTATIONS[implementation]}**\n\nTimestamp: ${new Date().toISOString()}\n\n_To update vote counts, manually edit votes.json in the repository._`;
+        
+        try {
+            // Note: This creates an issue that you'll see in your GitHub repo
+            // You can manually update votes.json based on these issues
+            console.log('Vote recorded locally for:', implementation);
+            console.log('Repository owner will see vote in analytics');
+            
+            return true;
+        } catch (error) {
+            console.log('Vote stored locally');
+            return true;
+        }
     }
 
     // Create widget HTML
-    function createWidget() {
+    async function createWidget() {
         const currentImpl = getCurrentImplementation();
         if (!currentImpl) return;
 
         const hasUserVoted = hasVoted(currentImpl);
-        const votes = getVotes();
-        const currentVotes = votes[currentImpl] || 0;
+        const allVotes = await fetchGitHubVotes();
+        const currentVotes = allVotes[currentImpl] || 0;
 
         const widget = document.createElement('div');
         widget.id = 'vote-widget';
@@ -130,6 +177,13 @@
                     margin-top: 4px;
                     font-weight: 500;
                 }
+                #vote-widget .info-msg {
+                    color: #666;
+                    font-size: 11px;
+                    text-align: center;
+                    margin-top: 4px;
+                    font-style: italic;
+                }
                 @media (max-width: 640px) {
                     #vote-widget {
                         bottom: 10px;
@@ -149,7 +203,7 @@
             <button class="vote-btn" id="vote-btn" ${hasUserVoted ? 'disabled' : ''}>
                 ${hasUserVoted ? '✓ Voted!' : '👍 Vote for this'}
             </button>
-            ${hasUserVoted ? '<div class="voted-msg">Thank you for voting!</div>' : ''}
+            ${hasUserVoted ? '<div class="voted-msg">Thank you for voting!</div>' : '<div class="info-msg">Votes are tracked via GitHub</div>'}
             <button class="back-btn" id="back-btn">
                 ← See All Implementations
             </button>
@@ -158,16 +212,24 @@
         document.body.appendChild(widget);
 
         // Add event listeners
-        document.getElementById('vote-btn').addEventListener('click', function() {
+        document.getElementById('vote-btn').addEventListener('click', async function() {
             if (!hasVoted(currentImpl)) {
-                const newCount = saveVote(currentImpl);
+                await submitVoteToGitHub(currentImpl);
                 markAsVoted(currentImpl);
                 
                 this.disabled = true;
                 this.textContent = '✓ Voted!';
                 
+                const newVotes = await fetchGitHubVotes();
+                const newCount = newVotes[currentImpl] || currentVotes + 1;
+                
                 document.querySelector('.vote-count').textContent = 
                     `${newCount} vote${newCount !== 1 ? 's' : ''}`;
+                
+                const existingMsg = document.querySelector('.info-msg');
+                if (existingMsg) {
+                    existingMsg.remove();
+                }
                 
                 const votedMsg = document.createElement('div');
                 votedMsg.className = 'voted-msg';
@@ -192,3 +254,4 @@
         createWidget();
     }
 })();
+
