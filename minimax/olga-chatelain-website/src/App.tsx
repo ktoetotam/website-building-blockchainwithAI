@@ -251,20 +251,19 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-12 bg-veryLightOrange relative overflow-hidden">
-        {/* Leadership Pyramid Background */}
+      <section id="about" className="py-12 bg-warmWhite relative overflow-hidden">
+        {/* Business Grid Background */}
         <div 
-          className="absolute inset-0 z-0 opacity-[0.04]"
+          className="absolute inset-0 z-0 opacity-[0.4]"
           style={{
-            backgroundImage: 'url(./images/elements/leadership_pyramid.png)',
-            backgroundSize: '40%',
-            backgroundPosition: 'left center',
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: 'url(./images/backgrounds/business_grid.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         />
         {/* Geometric Hex Pattern */}
         <div 
-          className="absolute inset-0 z-0 opacity-[0.02]"
+          className="absolute inset-0 z-0 opacity-[0.01]"
           style={{
             backgroundImage: 'url(./images/backgrounds/geometric_hex_pattern.png)',
             backgroundSize: 'cover',
@@ -273,7 +272,7 @@ function App() {
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-warmOrange mb-4">About Dr. Olga Chatelain</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-warmGray mb-4">About Dr. Olga Chatelain</h2>
             <p className="text-xl text-warmGray max-w-3xl mx-auto">
               Dynamic leader with deep international experience in executive coaching, 
               leadership development and digital transformation
@@ -309,21 +308,21 @@ function App() {
                   <img 
                     src="./images/professional-portrait-replacement.jpeg" 
                     alt="Dr. Olga Chatelain - AI & Blockchain Expert & Digital Transformation - Professional Portrait"
-                    className="w-64 h-64 object-cover rounded-2xl shadow-orange border-4 border-warmOrange"
+                    className="w-64 h-64 object-cover rounded-2xl shadow-orange border-4 border-warmGray"
                   />
-                  <div className="absolute -bottom-4 -right-4 bg-warmOrange text-warmWhite p-3 rounded-full shadow-lg">
+                  <div className="absolute -bottom-4 -right-4 bg-warmGray text-warmWhite p-3 rounded-full shadow-lg">
                     <Award size={24} />
                   </div>
                 </div>
-                <p className="text-warmOrange font-semibold mt-6 text-lg">Ph.D. in Power Engineering</p>
+                <p className="text-warmGray font-semibold mt-6 text-lg">Ph.D. in Power Engineering</p>
                 <p className="text-warmGray text-base">Siemens AG Program Manager</p>
               </div>
             </div>
           </div>
 
           {/* Core Competencies - Separate Section */}
-          <div className="mt-12 pt-8 border-t border-lightOrange">
-            <h3 className="text-2xl font-bold text-warmOrange text-center mb-8">Core Competencies</h3>
+          <div className="mt-12 pt-8 border-t border-gray-300">
+            <h3 className="text-2xl font-bold text-warmGray text-center mb-8">Core Competencies</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { icon: Brain, title: 'Leadership & Executive Coaching', desc: 'Systematic business coaching with track record in executive development' },
@@ -331,8 +330,8 @@ function App() {
                 { icon: Network, title: 'AI & Blockchain Technology', desc: 'Implementing AI-powered solutions and blockchain innovations' },
                 { icon: Target, title: 'Strategic Project Management', desc: 'Managing complex, multi-billion euro projects with measurable results' }
               ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 bg-warmWhite rounded-lg hover:bg-veryLightOrange/50 transition-colors shadow-sm border border-lightOrange">
-                  <item.icon className="text-warmOrange flex-shrink-0 mt-1" size={24} />
+                <div key={index} className="flex items-start space-x-3 p-4 bg-warmWhite rounded-lg hover:bg-warmWhiteLight transition-colors shadow-sm border border-gray-300">
+                  <item.icon className="text-warmGray flex-shrink-0 mt-1" size={24} />
                   <div>
                     <h4 className="font-semibold text-warmGray text-sm">{item.title}</h4>
                     <p className="text-warmGray text-xs">{item.desc}</p>
