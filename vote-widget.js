@@ -3,7 +3,7 @@
     // Configuration
     const STORAGE_KEY = 'website_votes';
     const USER_VOTES_KEY = 'user_voted_implementations';
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnnebqkv'; // Using the same form as contact form
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meoylrkk'; // Using the same form as contact form
     
     const IMPLEMENTATIONS = {
         'gemini': 'Gemini Implementation',
