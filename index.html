@@ -67,9 +67,27 @@
         .kimi {
             background: linear-gradient(135deg, #5B7FFF 0%, #7B9CFF 100%);
         }
+        .info-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .info-section:first-of-type {
+            margin-top: 2rem;
+        }
         @media (max-width: 640px) {
             .container {
                 padding: 1.5rem;
+            }
+            .info-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info-section a[style*="flex-shrink"] {
+                margin-bottom: 0.5rem;
             }
         }
     </style>
@@ -82,7 +100,7 @@
             <!-- Links will be populated by JavaScript -->
         </div>
         
-        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; display: flex; align-items: center; gap: 1rem;">
+        <div class="info-section">
             <a href="https://msukhareva.substack.com/p/tutorial-build-your-own-website-with" target="_blank" style="flex-shrink: 0;">
                 <img src="images/AI_Realist_Banner_Logo_Swap (1).png" alt="AI Realist Banner" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer;">
             </a>
@@ -94,7 +112,7 @@
             </p>
         </div>
         
-        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; display: flex; align-items: center; gap: 1rem;">
+        <div class="info-section">
             <a href="https://msukhareva.substack.com/p/we-built-5-sites-with-llms-in-a-day" target="_blank" style="flex-shrink: 0;">
                 <img src="images/Beige 2 Minimalist Mood Photo Collage.png" alt="Project Collage" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer;">
             </a>
