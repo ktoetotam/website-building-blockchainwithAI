@@ -1,0 +1,154 @@
+_date,_subject,implementation,implementationName,timestamp
+2025-12-14T13:49:24.482548+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-14T13:49:23.977Z
+2025-12-14T00:02:57.626868+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-14T00:02:56.788Z
+2025-12-13T12:17:16.639644+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-13T12:17:12.160Z
+2025-12-13T11:23:08.258816+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-13T11:23:09.378Z
+2025-12-13T10:53:50.066922+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-13T10:53:49.855Z
+2025-12-13T10:53:45.912056+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-13T10:53:45.621Z
+2025-12-13T09:22:19.344192+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-13T09:22:17.938Z
+2025-12-13T09:22:15.423023+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-13T09:22:15.197Z
+2025-12-12T21:08:15.571244+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-12T21:08:15.248Z
+2025-12-12T14:26:46.351226+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-12T14:26:45.754Z
+2025-12-12T08:51:00.287020+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-12T08:50:59.862Z
+2025-12-11T14:07:04.177620+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-11T14:07:03.359Z
+2025-12-11T13:12:57.592638+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-11T13:12:57.510Z
+2025-12-11T13:12:40.570323+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-11T13:12:40.300Z
+2025-12-11T10:15:27.807002+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-11T10:15:24.756Z
+2025-12-11T08:52:13.957875+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-11T08:52:13.568Z
+2025-12-11T07:45:15.754734+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-11T07:45:11.584Z
+2025-12-11T03:48:15.655217+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-11T03:48:14.878Z
+2025-12-11T03:48:11.861423+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-11T03:48:09.984Z
+2025-12-11T02:53:14.060784+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-11T02:53:13.595Z
+2025-12-11T01:28:49.658075+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-11T01:28:49.460Z
+2025-12-11T00:37:04.199295+00:00,Vote: ChatGPT Implementation,chatgpt,ChatGPT Implementation,2025-12-11T00:37:01.744Z
+2025-12-10T22:43:10.986274+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-10T22:43:10.791Z
+2025-12-10T21:55:52.369548+00:00,Vote: ChatGPT Implementation,chatgpt,ChatGPT Implementation,2025-12-10T21:55:52.882Z
+2025-12-10T21:55:48.052831+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T21:55:48.366Z
+2025-12-10T21:14:03.309917+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T21:14:01.891Z
+2025-12-10T20:56:31.298238+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T20:56:31.059Z
+2025-12-10T19:40:54.256563+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T19:40:53.974Z
+2025-12-10T19:15:40.459028+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T19:15:36.873Z
+2025-12-10T18:49:16.634674+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T18:49:15.996Z
+2025-12-10T18:09:27.867725+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T18:09:27.521Z
+2025-12-10T17:00:10.286331+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-10T17:00:08.318Z
+2025-12-10T16:56:29.427189+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T16:56:28.763Z
+2025-12-10T16:52:51.898109+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T16:52:50.289Z
+2025-12-10T14:44:11.980101+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T14:44:11.750Z
+2025-12-10T14:44:03.995821+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T14:44:03.631Z
+2025-12-10T13:08:24.798849+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T13:08:24.372Z
+2025-12-10T12:12:01.919369+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T12:12:00.854Z
+2025-12-10T11:57:54.837313+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T11:57:54.690Z
+2025-12-10T11:57:50.005346+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T11:57:49.732Z
+2025-12-10T11:37:42.071769+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T11:37:41.754Z
+2025-12-10T09:40:06.725872+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T09:40:13.997Z
+2025-12-10T07:43:52.370365+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T07:43:52.230Z
+2025-12-10T07:43:21.008621+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-10T07:43:20.149Z
+2025-12-10T07:30:27.615450+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T07:30:19.073Z
+2025-12-10T06:30:59.788626+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T06:30:59.511Z
+2025-12-10T06:26:57.878969+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-10T06:26:58.720Z
+2025-12-10T05:57:24.388951+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T05:57:24.029Z
+2025-12-10T05:56:59.549137+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T05:56:59.253Z
+2025-12-10T05:39:07.102274+00:00,Vote: ChatGPT Implementation,chatgpt,ChatGPT Implementation,2025-12-10T05:39:06.671Z
+2025-12-10T05:30:36.793160+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T05:30:36.594Z
+2025-12-10T05:30:04.574606+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-10T05:30:03.427Z
+2025-12-10T05:07:03.811336+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T05:07:03.480Z
+2025-12-10T04:19:49.803527+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T04:19:47.812Z
+2025-12-10T03:30:44.031864+00:00,Vote: ChatGPT Implementation,chatgpt,ChatGPT Implementation,2025-12-10T03:30:43.908Z
+2025-12-10T03:30:37.978519+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T03:30:37.813Z
+2025-12-10T03:30:03.172025+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T03:30:02.709Z
+2025-12-10T03:29:49.138884+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T03:29:48.936Z
+2025-12-10T02:35:18.795246+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T02:35:18.051Z
+2025-12-10T02:23:51.804731+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T02:23:47.681Z
+2025-12-10T02:13:18.165305+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T02:13:17.932Z
+2025-12-10T01:54:09.249258+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T01:54:09.119Z
+2025-12-10T01:53:33.636035+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-10T01:53:33.498Z
+2025-12-10T01:53:07.392322+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-10T01:53:07.127Z
+2025-12-10T01:19:28.009218+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T01:19:27.395Z
+2025-12-10T00:58:04.669911+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-10T00:58:05.180Z
+2025-12-10T00:02:50.121662+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-10T00:02:49.905Z
+2025-12-10T00:01:36.576253+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-10T00:01:35.866Z
+2025-12-09T23:42:17.712698+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T23:42:17.449Z
+2025-12-09T23:22:03.136099+00:00,Vote: ChatGPT Implementation,chatgpt,ChatGPT Implementation,2025-12-09T23:22:02.951Z
+2025-12-09T23:21:52.958005+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T23:21:52.712Z
+2025-12-09T22:18:21.203988+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T22:18:18.855Z
+2025-12-09T21:57:08.922518+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T21:57:08.392Z
+2025-12-09T21:50:40.672800+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T21:50:40.397Z
+2025-12-09T21:37:33.045136+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T21:37:32.165Z
+2025-12-09T21:25:27.972841+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T21:25:27.720Z
+2025-12-09T20:55:25.220812+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T20:55:25.397Z
+2025-12-09T20:49:35.469334+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T20:49:35.233Z
+2025-12-09T20:39:37.501884+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T20:39:37.670Z
+2025-12-09T20:39:34.039688+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T20:39:34.194Z
+2025-12-09T20:39:29.159909+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T20:39:28.970Z
+2025-12-09T20:25:59.257213+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T20:25:58.701Z
+2025-12-09T20:22:49.905860+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T20:23:29.267Z
+2025-12-09T20:00:32.810445+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T20:00:29.763Z
+2025-12-09T19:46:02.697718+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T19:46:02.503Z
+2025-12-09T17:46:50.609532+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T17:46:49.643Z
+2025-12-09T17:25:13.964725+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T17:25:13.606Z
+2025-12-09T17:17:58.073515+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T17:17:57.938Z
+2025-12-09T17:17:29.638934+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T17:17:29.474Z
+2025-12-09T17:17:13.852681+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T17:17:13.716Z
+2025-12-09T17:16:51.914343+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T17:16:51.668Z
+2025-12-09T17:08:57.219309+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T17:08:56.100Z
+2025-12-09T17:08:26.034890+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T17:08:24.802Z
+2025-12-09T16:02:10.066246+00:00,Vote: ChatGPT Implementation,chatgpt,ChatGPT Implementation,2025-12-09T16:02:10.125Z
+2025-12-09T15:57:55.421200+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T15:57:55.414Z
+2025-12-09T15:42:56.166188+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T15:42:56.221Z
+2025-12-09T15:39:35.923032+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T15:39:35.461Z
+2025-12-09T15:34:08.760570+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T15:34:07.797Z
+2025-12-09T15:18:24.990037+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T15:18:24.550Z
+2025-12-09T15:09:27.230161+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T15:09:26.944Z
+2025-12-09T15:08:40.174546+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T15:08:45.906Z
+2025-12-09T15:08:32.976086+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T15:08:37.914Z
+2025-12-09T14:35:38.607170+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T14:35:38.141Z
+2025-12-09T14:27:41.729110+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T14:27:40.818Z
+2025-12-09T13:31:41.871796+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T13:31:40.929Z
+2025-12-09T13:23:23.989266+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T13:23:23.425Z
+2025-12-09T13:14:34.249867+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T13:14:34.807Z
+2025-12-09T13:11:12.233487+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T13:11:11.635Z
+2025-12-09T13:04:55.070213+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T13:04:55.366Z
+2025-12-09T12:52:19.807135+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T12:52:19.537Z
+2025-12-09T12:51:29.180190+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T12:51:31.279Z
+2025-12-09T12:49:51.552772+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T12:49:51.280Z
+2025-12-09T12:23:47.315652+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T12:23:46.704Z
+2025-12-09T12:10:10.625238+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T12:10:02.986Z
+2025-12-09T12:08:02.641946+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T12:08:02.446Z
+2025-12-09T11:56:27.638492+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T11:56:29.181Z
+2025-12-09T11:37:51.557226+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T11:37:51.784Z
+2025-12-09T11:35:47.191694+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T11:35:47.704Z
+2025-12-09T11:32:20.404745+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T11:32:20.116Z
+2025-12-09T11:21:48.256354+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T11:21:47.908Z
+2025-12-09T11:10:34.009285+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T11:10:33.620Z
+2025-12-09T11:05:08.807007+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T11:05:06.688Z
+2025-12-09T10:59:43.908301+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T10:59:43.723Z
+2025-12-09T10:59:39.503299+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T10:59:39.169Z
+2025-12-09T10:45:55.875904+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T10:45:55.664Z
+2025-12-09T10:21:13.719640+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T10:21:13.407Z
+2025-12-09T09:55:11.393707+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T09:55:11.273Z
+2025-12-09T09:54:59.716614+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T09:54:59.420Z
+2025-12-09T09:28:11.649362+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T09:28:11.432Z
+2025-12-09T08:48:40.077524+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T08:48:37.905Z
+2025-12-09T08:47:29.640745+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T08:47:29.378Z
+2025-12-09T08:33:00.314112+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T08:32:59.178Z
+2025-12-09T08:29:25.141653+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T08:29:25.052Z
+2025-12-09T08:29:03.271365+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T08:29:02.852Z
+2025-12-09T08:21:48.685954+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T08:21:45.874Z
+2025-12-09T08:21:42.878794+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T08:21:39.889Z
+2025-12-09T08:03:14.821739+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T08:03:14.050Z
+2025-12-09T08:02:53.786799+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T08:02:55.935Z
+2025-12-09T07:58:14.802232+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T07:58:14.555Z
+2025-12-09T07:57:11.719750+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T07:57:11.364Z
+2025-12-09T07:57:07.210233+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T07:57:06.701Z
+2025-12-09T07:54:11.073498+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T07:54:08.751Z
+2025-12-09T07:53:00.841249+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T07:52:57.599Z
+2025-12-09T07:52:56.315654+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T07:52:55.981Z
+2025-12-09T07:45:03.624439+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T07:45:03.350Z
+2025-12-09T07:27:19.623513+00:00,Vote: Claude Implementation,claude,Claude Implementation,2025-12-09T07:27:20.079Z
+2025-12-09T07:19:49.326334+00:00,Vote: ChatGPT Implementation,chatgpt,ChatGPT Implementation,2025-12-09T07:19:49.255Z
+2025-12-09T07:19:35.488762+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T07:19:35.309Z
+2025-12-09T07:04:03.938988+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T07:04:04.224Z
+2025-12-09T07:03:42.926444+00:00,Vote: Kimi K2 Implementation,kimi,Kimi K2 Implementation,2025-12-09T07:03:42.998Z
+2025-12-09T06:49:41.630793+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-09T06:49:41.862Z
+2025-12-09T06:25:27.092722+00:00,Vote: MiniMax Implementation,minimax,MiniMax Implementation,2025-12-09T06:25:25.782Z
+2025-12-08T20:37:11.288810+00:00,Vote: Gemini Implementation,gemini,Gemini Implementation,2025-12-08T20:37:11.063Z
